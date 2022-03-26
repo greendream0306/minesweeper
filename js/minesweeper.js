@@ -24,19 +24,19 @@ var cells = [];
 var safeCells = [];
 var mineCells = null;
 var rightClickFlag = 0;
-var endGameFlag = false;
+var endGameFlag = true;
 var flagMineCount=0;
 
 function startGame() {
     rightClickFlag = 0;
     endGameFlag = false;
     flagMineCount = 0;
+    timeValue=0;
     document.getElementById("timer").innerHTML = 0;
     document.getElementById("Mines").innerHTML = levels[defaultLevel]['mins'] - flagMineCount;
     document.getElementById("smiley").classList.remove('lose_flag');
     document.getElementById("smiley").classList.remove('face_win');
     buildGrid();
-    startTimer();
 }
 
 function buildGrid() {
@@ -262,5 +262,6 @@ function onTimerTick() {
 }
 
 function updateTimer() {
-    document.getElementById("timer").innerHTML = timeValue;
+    if(endGameFlag == false)
+        document.getElementById("timer").innerHTML = timeValue;
 }
