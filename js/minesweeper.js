@@ -245,8 +245,9 @@ function smileyUp() {
     smiley.classList.remove("face_down");
 }
 
-function setDifficulty(diff) {
-    this.defaultLevel = diff;
+function setDifficulty() {
+    var smiley = document.getElementById("difficult");
+    this.defaultLevel = smiley.value;
     startGame();
 }
 

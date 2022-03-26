@@ -10,13 +10,12 @@
             <div class="header">
                 <h1> Minesweeper </h1>
             </div>
-            <div class="diff-grade">
-                <input type="radio" name="difficulty" id="Easy" value="1" onclick="setDifficulty('easy')" checked/> <label for="Easy">Easy</label> &nbsp;&nbsp;&nbsp;
-                <input type="radio" name="difficulty" id="Medium" value="2" onclick="setDifficulty('medium')" /> <label for="Medium">Medium</label>&nbsp;&nbsp;&nbsp;
-                <input type="radio" name="difficulty" id="Hard" value="3" onclick="setDifficulty('hard')" /> <label for="Hard">Hard</label>&nbsp;&nbsp;&nbsp;
-            </div>
-
             <div class="view">
+                <select id="difficult" onchange="setDifficulty()">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>&nbsp;&nbsp;&nbsp;
                 <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
                 <span>Mines:</span>
                 <span id="Mines" > </span>
